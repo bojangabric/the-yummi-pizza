@@ -12,20 +12,20 @@ const tailwindcss = require("tailwindcss");
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.disableNotifications();
 
-mix
-  .js("resources/js/app.js", "public/js")
-  .sass("resources/sass/app.scss", "public/css")
-  .options({
-    processCssUrls: false,
-    postCss: [tailwindcss("./tailwind.config.js")]
-  })
-  // .purgeCss({
-  //   enabled: true,
-  //   folders: ["resources"],
-  //   extensions: ["html", "js", "php"],
-  //   extractorPattern: [/[a-zA-Z0-9-_:/]+/g]
-  // })
-  .browserSync({
-    proxy: "hotelbooking.local"
-  });
+mix.react('resources/js/app.js', 'public/js')
+   .sass('resources/sass/app.scss', 'public/css')
+   .options({
+      processCssUrls: false,
+      postCss: [tailwindcss("./tailwind.config.js")]
+   })
+   // .purgeCss({
+   //   enabled: true,
+   //   folders: ["resources"],
+   //   extensions: ["html", "js", "php"],
+   //   extractorPattern: [/[a-zA-Z0-9-_:/]+/g]
+   // })
+   .browserSync({
+      proxy: "pizza.local"
+   });
