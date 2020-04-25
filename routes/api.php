@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Pizza;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('pizzas', 'PizzasController@index');
+
+Route::get('customers', 'CustomersController@index');
+Route::post('customers', 'CustomersController@store');
+
+Route::get('orders', 'OrdersController@index');
+Route::post('orders', 'OrdersController@store');
