@@ -1,6 +1,14 @@
-import { OPEN_MODAL, CLOSE_MODAL, ADD_TO_CART, REMOVE_FROM_CART } from '../constants/action-types';
+import {
+  OPEN_MODAL,
+  CLOSE_MODAL,
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  GET_ALL_PIZZAS,
+  CONFIRM_ORDER
+} from '../constants/action-types';
 
 const initialState = {
+  pizzas: [],
   modalPizza: { name: '', description: '', price: '' },
   openModal: false,
   cart: []
@@ -27,7 +35,17 @@ function rootReducer(state = initialState, action) {
   } else if (action.type === REMOVE_FROM_CART) {
     return {
       ...state,
-      cart: state.cart.filter(pizza => pizza.id !== action.payload)
+      cart: state.cart.filter(pizza => pizza.cartid !== action.payload)
+    };
+  } else if (action.type === GET_ALL_PIZZAS) {
+    return {
+      ...state,
+      pizzas: action.payload
+    };
+  } else if (action.type === CONFIRM_ORDER) {
+    return {
+      ...state,
+      cart: []
     };
   }
 
