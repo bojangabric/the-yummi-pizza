@@ -28,7 +28,8 @@ class PizzaModal extends Component {
       toppings: [],
       size: '24cm',
       name: '',
-      price: ''
+      price: '',
+      id: ''
     };
 
     this.onClose = this.onClose.bind(this);
@@ -38,7 +39,15 @@ class PizzaModal extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ name: nextProps.modalPizza.name, price: nextProps.modalPizza.price });
+    this.setState({
+      name: nextProps.modalPizza.name,
+      price: nextProps.modalPizza.price,
+      id:
+        '_' +
+        Math.random()
+          .toString(36)
+          .substr(2, 9)
+    });
   }
 
   incrementCount() {
@@ -84,6 +93,7 @@ class PizzaModal extends Component {
         onRequestClose={this.onClose}
         overlayClassName="overlay-modal"
         style={customStyles}
+        ariaHideApp={false}
       >
         <button className="absolute top-0 right-0 mt-2 mr-2" onClick={this.props.closeModal}>
           <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6">
@@ -92,12 +102,12 @@ class PizzaModal extends Component {
         </button>
         <div>
           <div className="max-w-2xl">
-            <img src="/images/pizza.jpeg" />
+            <img src={`/images/${this.props.modalPizza.name.toLowerCase()}.jpeg`} />
           </div>
           <div className="p-10">
             <div className="flex justify-between">
               <div className="font-medium text-xl">{this.props.modalPizza.name}</div>
-              <div className="text-blue-600">{this.props.modalPizza.price}</div>
+              <div className="text-blue-600">{this.props.modalPizza.price}$</div>
             </div>
             <div className="text-sm font-light italic mt-1">{this.props.modalPizza.description}</div>
             <div>
