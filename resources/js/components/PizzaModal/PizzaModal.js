@@ -29,7 +29,7 @@ class PizzaModal extends Component {
       size: '24cm',
       name: '',
       price: '',
-      id: ''
+      cartid: ''
     };
 
     this.onClose = this.onClose.bind(this);
@@ -42,7 +42,7 @@ class PizzaModal extends Component {
     this.setState({
       name: nextProps.modalPizza.name,
       price: nextProps.modalPizza.price,
-      id:
+      cartid:
         '_' +
         Math.random()
           .toString(36)
@@ -95,13 +95,16 @@ class PizzaModal extends Component {
         style={customStyles}
         ariaHideApp={false}
       >
-        <button className="absolute top-0 right-0 mt-2 mr-2" onClick={this.props.closeModal}>
-          <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6">
+        <button
+          className="absolute top-0 right-0 mt-3 mr-3 bg-red-300 rounded-full p-1"
+          onClick={this.props.closeModal}
+        >
+          <svg strokeWidth="2" viewBox="0 0 24 24" className="text-red-900 stroke-current w-6 h-6">
             <path d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
-        <div>
-          <div className="max-w-2xl">
+        <div className="max-w-2xl">
+          <div>
             <img src={`/images/${this.props.modalPizza.name.toLowerCase()}.jpeg`} />
           </div>
           <div className="p-10">
