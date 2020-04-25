@@ -4,15 +4,16 @@ import { openModal } from '../actions';
 
 const Pizza = props => {
   const { name, description, price, openModal } = props;
+  const img = `/images/${name.toLowerCase()}.jpeg`;
 
   return (
-    <div className="shadow rounded overflow-hidden">
+    <div className="shadow rounded overflow-hidden flex flex-col flex-grow">
       <div className="w-full">
-        <img src="/images/pizza.jpeg" />
+        <img src={img} />
       </div>
-      <div className="p-5">
+      <div className="p-5 flex flex-col flex-grow">
         <div className="font-medium">{name}</div>
-        <div className="text-sm font-light italic mt-1">{description}</div>
+        <div className="text-sm font-light italic mt-1 flex-grow">{description}</div>
         <div className="mt-5 justify-between flex items-center">
           <div className="text-blue-600">
             {price}$ / {price}$
