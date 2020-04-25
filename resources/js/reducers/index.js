@@ -1,7 +1,9 @@
 import { OPEN_MODAL, CLOSE_MODAL, ADD_TO_CART } from '../constants/action-types';
 
 const initialState = {
-  openModal: false
+  modalPizza: { name: '', description: '', price: '' },
+  openModal: false,
+  cart: []
 };
 
 function rootReducer(state = initialState, action) {
