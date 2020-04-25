@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 class Cart extends Component {
   render() {
@@ -16,19 +17,19 @@ class Cart extends Component {
           </div>
         ) : (
           this.props.cart.map(pizza => (
-            <div className="mb-6">
+            <div className="mb-6 border-b pb-2">
               <div className="flex justify-between items-center mb-1">
                 <div>
-                  {pizza.name} {pizza.size}
+                  {pizza.name} <span className="text-gray-600">- {pizza.size}</span>
                 </div>
                 <div>
-                  <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-6 h-6">
+                  <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-5 h-5">
                     <path d="M6 18L18 6M6 6l12 12"></path>
                   </svg>
                 </div>
               </div>
               <div className="flex justify-between items-center">
-                <div className="text-sm">x{pizza.count}</div>
+                <div className="text-sm text-gray-600">x{pizza.count}</div>
                 <div className="text-blue-600">{pizza.price * pizza.count}$</div>
               </div>
             </div>
@@ -38,14 +39,20 @@ class Cart extends Component {
         {this.props.cart && this.props.cart.length < 1 ? (
           ''
         ) : (
-          <div>
-            Total
-            {this.props.cart.reduce((total, { price, count }) => total + price * count, 0)}
+          <div className="flex justify-between">
+            <div>Total</div>
+            <div className="text-blue-600">
+              {this.props.cart.reduce((total, { price, count }) => total + price * count, 0)}$
+            </div>
           </div>
         )}
-        <button className="w-full bg-yellow-400 text-yellow-800 mt-6 flex justify-center px-6 py-2 rounded">
+        <NavLink
+          exact
+          to={'/checkout'}
+          className="w-full bg-yellow-400 text-yellow-800 mt-6 flex justify-center px-6 py-2 rounded"
+        >
           Check out
-        </button>
+        </NavLink>
       </div>
     );
   }
