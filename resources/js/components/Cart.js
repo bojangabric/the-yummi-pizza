@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import { removeFromCart } from '../actions';
 
 class Cart extends Component {
@@ -18,12 +17,12 @@ class Cart extends Component {
           </div>
         ) : (
           this.props.cart.map(pizza => (
-            <div className="mb-6 border-b pb-2" key={pizza.id}>
+            <div className="mb-6 border-b pb-2" key={pizza.cartid}>
               <div className="flex justify-between items-center mb-1">
                 <div>
                   {pizza.name} <span className="text-gray-600">- {pizza.size}</span>
                 </div>
-                <button onClick={() => this.props.removeFromCart(pizza.id)}>
+                <button onClick={() => this.props.removeFromCart(pizza.cartid)}>
                   <svg fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" className="w-5 h-5">
                     <path d="M6 18L18 6M6 6l12 12"></path>
                   </svg>
@@ -40,20 +39,22 @@ class Cart extends Component {
         {this.props.cart && this.props.cart.length < 1 ? (
           ''
         ) : (
-          <div className="flex justify-between">
-            <div>Total</div>
-            <div className="text-blue-600">
-              {this.props.cart.reduce((total, { price, count }) => total + price * count, 0)}$
+          <div>
+            <div className="flex justify-between text-sm mb-2">
+              <div className="text-gray-700">Delivery fee</div>
+              <div className="text-blue-600">2.50$</div>
+            </div>
+            <div className="flex justify-between">
+              <div>Total</div>
+              <div className="text-blue-600">
+                {this.props.cart.reduce((total, { price, count }) => 2.5 + total + price * count, 0)}$
+              </div>
             </div>
           </div>
         )}
-        <NavLink
-          exact
-          to={'/checkout'}
-          className="w-full bg-yellow-400 text-yellow-800 mt-6 flex justify-center px-6 py-2 rounded"
-        >
+        <a href="/checkout" className="w-full bg-yellow-400 text-yellow-800 mt-6 flex justify-center px-6 py-2 rounded">
           Check out
-        </NavLink>
+        </a>
       </div>
     );
   }
