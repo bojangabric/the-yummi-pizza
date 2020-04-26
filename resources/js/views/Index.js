@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Pizza from '../components/Pizza';
@@ -14,7 +14,7 @@ class Index extends Component {
 
   render() {
     return (
-      <div className="w-3/5 mx-auto">
+      <div className="px-10 xl:px-0 xl:w-9/12 mx-auto">
         <Header />
 
         <div className="text-cesnter py-12 text-4xl">Choose a pizza you'd like to order!</div>
@@ -22,7 +22,13 @@ class Index extends Component {
         <div className="flex">
           <div className="w-3/4 grid grid-cols-3 gap-10 self-start">
             {this.props.pizzas.map(pizza => (
-              <Pizza name={pizza.name} description={pizza.description} price={pizza.price} key={pizza.id} />
+              <Pizza
+                name={pizza.name}
+                description={pizza.description}
+                price_eur={pizza.price_eur}
+                price_dollar={pizza.price_dollar}
+                key={pizza.id}
+              />
             ))}
           </div>
           <div className="w-1/4">

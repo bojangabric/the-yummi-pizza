@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { openModal } from '../actions';
 
 const Pizza = props => {
-  const { name, description, price, openModal } = props;
+  const { name, description, price_eur, price_dollar, openModal } = props;
   const img = `/images/${name.toLowerCase()}.jpeg`;
 
   return (
@@ -16,7 +16,7 @@ const Pizza = props => {
         <div className="text-sm font-light italic mt-1 flex-grow">{description}</div>
         <div className="mt-5 justify-between flex items-center">
           <div className="text-blue-600">
-            {price}$ / {price}$
+            {price_eur}€ / {price_dollar}$
           </div>
           <div className="cursor-pointer" onClick={() => openModal(props)}>
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">

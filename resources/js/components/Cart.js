@@ -30,7 +30,9 @@ class Cart extends Component {
               </div>
               <div className="flex justify-between items-center">
                 <div className="text-sm text-gray-600">x{pizza.count}</div>
-                <div className="text-blue-600">{pizza.price * pizza.count}$</div>
+                <div className="text-blue-600">
+                  {pizza.price_eur * pizza.count}€ / {pizza.price_dollar * pizza.count}$
+                </div>
               </div>
             </div>
           ))
@@ -47,7 +49,8 @@ class Cart extends Component {
             <div className="flex justify-between">
               <div>Total</div>
               <div className="text-blue-600">
-                {this.props.cart.reduce((total, { price, count }) => 2.5 + total + price * count, 0)}$
+                {this.props.cart.reduce((total, { price_eur, count }) => 2.5 + total + price_eur * count, 0)}€ /{' '}
+                {this.props.cart.reduce((total, { price_dollar, count }) => 2.5 + total + price_dollar * count, 0)}$
               </div>
             </div>
           </div>

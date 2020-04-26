@@ -18,7 +18,8 @@ class PizzasTableSeeder extends Seeder
             Pizza::create([
                 'name' => $pizza_names[$i],
                 'description' => $faker->paragraph,
-                'price' => $faker->randomNumber(2)
+                'price_eur' => $faker->randomNumber(2),
+                'price_dollar' => $faker->randomNumber(2),
             ]);
         }
     }

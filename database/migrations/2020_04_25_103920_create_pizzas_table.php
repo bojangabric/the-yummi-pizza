@@ -18,7 +18,8 @@ class CreatePizzasTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->text('description');
-            $table->integer('price');
+            $table->integer('price_eur');
+            $table->integer('price_dollar');
         });
     }
 

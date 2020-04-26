@@ -28,7 +28,8 @@ class PizzaModal extends Component {
       toppings: [],
       size: '24cm',
       name: '',
-      price: '',
+      price_eur: '',
+      price_dollar: '',
       cartid: ''
     };
 
@@ -41,7 +42,8 @@ class PizzaModal extends Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       name: nextProps.modalPizza.name,
-      price: nextProps.modalPizza.price,
+      price_eur: nextProps.modalPizza.price_eur,
+      price_dollar: nextProps.modalPizza.price_dollar,
       cartid:
         '_' +
         Math.random()
@@ -110,7 +112,9 @@ class PizzaModal extends Component {
           <div className="p-10">
             <div className="flex justify-between">
               <div className="font-medium text-xl">{this.props.modalPizza.name}</div>
-              <div className="text-blue-600">{this.props.modalPizza.price}$</div>
+              <div className="text-blue-600">
+                {this.props.modalPizza.price_eur}€ / {this.props.modalPizza.price_dollar}$
+              </div>
             </div>
             <div className="text-sm font-light italic mt-1">{this.props.modalPizza.description}</div>
             <div>
