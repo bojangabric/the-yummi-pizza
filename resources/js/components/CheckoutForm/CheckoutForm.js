@@ -15,7 +15,8 @@ class CheckoutForm extends Component {
       interphone: '',
       floor: '',
       phone: '',
-      email: ''
+      email: '',
+      notice: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -105,6 +106,8 @@ class CheckoutForm extends Component {
             <label className="block">
               <span className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Notice</span>
               <textarea
+                onChange={this.handleChange}
+                name="notice"
                 className="form-textarea mt-1 block w-full"
                 rows="4"
                 placeholder="Directions, or something..."

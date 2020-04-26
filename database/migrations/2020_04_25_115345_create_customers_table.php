@@ -23,6 +23,7 @@ class CreateCustomersTable extends Migration
             $table->integer('floor');
             $table->string('phone');
             $table->string('email')->unique();
+            $table->text('notice')->nullable();
         });
     }
 
