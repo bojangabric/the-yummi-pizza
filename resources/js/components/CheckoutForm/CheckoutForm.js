@@ -32,7 +32,7 @@ class CheckoutForm extends Component {
 
   confirmOrder() {
     for (var field in this.state) {
-      if (this.state[field] === '') {
+      if (this.state[field] === '' && field !== 'notice') {
         toast.error('Fill out all the fields!', {
           position: 'top-left',
           autoClose: 5000,
