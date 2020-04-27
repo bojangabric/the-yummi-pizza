@@ -38,7 +38,7 @@ export const removeFromCart = pizzaid => dispatch => {
 
 export const getAllPizzas = () => dispatch => {
   axios
-    .get(`http://pizza.local/api/pizzas`)
+    .get(`https://pure-hollows-05958.herokuapp.com/api/pizzas`)
     .then(res => res.data)
     .then(pizzas =>
       dispatch({
@@ -49,11 +49,11 @@ export const getAllPizzas = () => dispatch => {
 };
 
 export const confirmOrder = (customerData, cart) => dispatch => {
-  let customer = axios.post(`http://pizza.local/api/customers`, customerData);
+  let customer = axios.post(`https://pure-hollows-05958.herokuapp.com/api/customers`, customerData);
 
   let order = customer.then(res =>
     axios.post(
-      `http://pizza.local/api/orders`,
+      `https://pure-hollows-05958.herokuapp.com/api/orders`,
       cart.map(pizza => ({ ...pizza, customer_id: res.data.id }))
     )
   );
