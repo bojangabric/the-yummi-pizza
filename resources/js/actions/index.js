@@ -49,24 +49,27 @@ export const getAllPizzas = () => dispatch => {
 };
 
 export const confirmOrder = (customerData, cart) => dispatch => {
-  axios.post(`http://pizza.local/api/customers`, customerData).then(res =>
-    axios
-      .post(
-        `http://pizza.local/api/orders`,
-        cart.map(pizza => ({ ...pizza, customer_id: res.data.id }))
-      )
-      .then(() =>
-        dispatch({
-          type: CONFIRM_ORDER
-        })
-      )
-      .then(() =>
-        toast.success('Order was successful!', {
-          position: 'top-left',
-          autoClose: 5000,
-          hideProgressBar: true,
-          closeOnClick: true
-        })
-      )
+  let customer = axios.post(`http://pizza.local/api/customers`, customerData);
+
+  let order = customer.then(res =>
+    axios.post(
+      `http://pizza.local/api/orders`,
+      cart.map(pizza => ({ ...pizza, customer_id: res.data.id }))
+    )
   );
+
+  order
+    .then(() =>
+      dispatch({
+        type: CONFIRM_ORDER
+      })
+    )
+    .then(() =>
+      toast.success('Order was successful!', {
+        position: 'top-left',
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true
+      })
+    );
 };
