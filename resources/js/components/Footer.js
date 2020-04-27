@@ -1,12 +1,10 @@
-import React from "react";
+import React from 'react';
 const Footer = () => {
   return (
     <div className="pt-16 pb-24 font-light">
       <div className="mt-6 lg:mt-20 mx-auto flex flex-wrap justify-between items-center">
-        <div className="order-2 lg:order-1 mt-12 lg:mt-0">
-          Copyright © 2019-2019 TheYummiPizza™. All rights reserved.
-        </div>
-        <div className="flex justify-between order-1 lg:order-2">
+        <div>Copyright © 2019-2019 TheYummiPizza™. All rights reserved.</div>
+        <div className="flex justify-between">
           <div className="h-10 w-10 bg-gray-200 rounded-full items-center flex justify-center mr-3">
             <svg
               className="w-5 h-5 fill-current text-gray-600"

@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
   return (
-    <div className="w-3/5 mx-auto">
+    <div className="w-4/5 xl:w-3/5 mx-auto">
       <Header />
 
       <div className="flex">
