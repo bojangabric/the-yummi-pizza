@@ -7,13 +7,13 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link href="/css/app.css" rel="stylesheet">
     <title>The Yummi Pizza</title>
 </head>
 
 <body>
     <div id="app"></div>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>
