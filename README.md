@@ -1,3 +1,14 @@
+### Routes
+
+* **/pizzas**
+    * GET - returns all available pizzas
+*  **/customers**
+    * GET - returns all customers
+    * POST - add a customer
+*  **/orders**
+    * GET - returns all orders
+    * POST - add an order
+    
 ### Installation
 
 Create new repository using this one as a template, clone the newly created repo and run these commands inside the folder:
