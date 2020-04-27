@@ -60035,7 +60035,7 @@ var removeFromCart = function removeFromCart(pizzaid) {
 };
 var getAllPizzas = function getAllPizzas() {
   return function (dispatch) {
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://pizza.local/api/pizzas").then(function (res) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("https://pure-hollows-05958.herokuapp.com/api/pizzas").then(function (res) {
       return res.data;
     }).then(function (pizzas) {
       return dispatch({
@@ -60047,9 +60047,9 @@ var getAllPizzas = function getAllPizzas() {
 };
 var confirmOrder = function confirmOrder(customerData, cart) {
   return function (dispatch) {
-    var customer = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://pizza.local/api/customers", customerData);
+    var customer = axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("https://pure-hollows-05958.herokuapp.com/api/customers", customerData);
     var order = customer.then(function (res) {
-      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://pizza.local/api/orders", cart.map(function (pizza) {
+      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("https://pure-hollows-05958.herokuapp.com/api/orders", cart.map(function (pizza) {
         return _objectSpread({}, pizza, {
           customer_id: res.data.id
         });
