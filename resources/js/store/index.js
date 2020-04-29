@@ -27,11 +27,7 @@ const saveState = state => {
 
 const persistedState = loadState();
 
-const store = createStore(
-  rootReducer,
-  persistedState,
-  compose(applyMiddleware(...middleware)
-);
+const store = createStore(rootReducer, persistedState, compose(applyMiddleware(...middleware)));
 
 store.subscribe(() => {
   saveState(store.getState());
