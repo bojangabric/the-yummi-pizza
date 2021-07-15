@@ -1,7 +1,5 @@
 module.exports = {
-  theme: {
-    extend: {}
-  },
-  variants: {},
-  plugins: [require("@tailwindcss/custom-forms")]
+  mode: 'jit',
+  purge: ['./resources/**/*.{js,php,html}'],
+  plugins: [require('@tailwindcss/forms')]
 };
