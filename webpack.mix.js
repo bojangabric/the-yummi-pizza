@@ -1,6 +1,4 @@
-const mix = require("laravel-mix");
-const tailwindcss = require("tailwindcss");
-// require("laravel-mix-purgecss");
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -14,18 +12,4 @@ const tailwindcss = require("tailwindcss");
  */
 mix.disableNotifications();
 
-mix.react('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css')
-   .options({
-      processCssUrls: false,
-      postCss: [tailwindcss("./tailwind.config.js")]
-   })
-   // .purgeCss({
-   //   enabled: true,
-   //   folders: ["resources"],
-   //   extensions: ["html", "js", "php"],
-   //   extractorPattern: [/[a-zA-Z0-9-_:/]+/g]
-   // })
-   .browserSync({
-      proxy: "pizza.local"
-   });
+mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [require('tailwindcss')]);
