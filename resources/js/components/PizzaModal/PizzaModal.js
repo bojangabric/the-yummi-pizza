@@ -39,16 +39,12 @@ class PizzaModal extends Component {
     this.checkboxChange = this.checkboxChange.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       name: nextProps.modalPizza.name,
       price_eur: nextProps.modalPizza.price_eur,
       price_dollar: nextProps.modalPizza.price_dollar,
-      cartid:
-        '_' +
-        Math.random()
-          .toString(36)
-          .substr(2, 9)
+      cartid: '_' + Math.random().toString(36).substr(2, 9)
     });
   }
 
@@ -151,7 +147,7 @@ class PizzaModal extends Component {
                   <input
                     disabled
                     type="number"
-                    className="outline-none focus:outline-none text-center w-full bg-white shadow font-semibold text-md flex items-center text-gray-700 outline-none"
+                    className="outline-none focus:outline-none text-center w-full bg-white shadow font-semibold text-md flex items-center text-gray-700"
                     value={this.state.count}
                   />
                   <button

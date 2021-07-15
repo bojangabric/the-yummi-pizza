@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Route } from "react-router-dom";
-import { Provider } from "react-redux";
-import store from "./store/index";
-import Router from "./Router";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/index';
+import Router from './Router';
 
 class Index extends Component {
   render() {
@@ -17,4 +17,4 @@ class Index extends Component {
   }
 }
 
-ReactDOM.render(<Index />, document.getElementById("app"));
+ReactDOM.render(<Index />, document.getElementById('app'));
