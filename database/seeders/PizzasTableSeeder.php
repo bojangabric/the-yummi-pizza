@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Database\Seeder;
+namespace Database\Seeders;
+
 use App\Pizza;
+use Illuminate\Database\Seeder;
 
 class PizzasTableSeeder extends Seeder
 {
