@@ -85,7 +85,7 @@ php artisan key:generate
 ./vendor/bin/sail artisan migrate:refresh --seed
 ```
 
-6. Finally, run your script start your React app in the container
+6. Finally, run your script and start your React app in the container
 
 ```bash
 ./vendor/bin/sail npm run watch
