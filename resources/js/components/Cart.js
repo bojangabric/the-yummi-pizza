@@ -5,7 +5,7 @@ import { removeFromCart } from '../actions';
 class Cart extends Component {
   render() {
     return (
-      <div className="shadow ml-10 p-4">
+      <div className="border ml-10 p-4">
         <div className="text-center font-medium text-lg mb-12">Your cart</div>
 
         {this.props.cart && this.props.cart.length < 1 ? (
