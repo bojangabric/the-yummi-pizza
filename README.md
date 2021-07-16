@@ -1,16 +1,9 @@
 # The Yummi Pizza
 
-Coding challenge for a company I aplied for.
+![Screenshot of front page](public/images/the_yummi_pizza.gif)
 
-## Screenshots
-
-### Front page
-
-![Screenshot of front page](public/images/screenshot_frontpage.png)
-
-### Ordering modal
-
-![Screenshot of front page](public/images/screenshot_modal.png)
+Web application for ordering pizza - Laravel & React coding challenge for a
+company I applied for
 
 ## Task description
 
