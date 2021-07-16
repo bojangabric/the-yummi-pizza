@@ -92,13 +92,13 @@ const PizzaModal = ({ modalPizza, openModal, closeModal, addToCart }) => {
                 <div className="max-w-2xl">
                   <img src={`/images/${modalPizza.name.toLowerCase()}.jpeg`} />
                   <div className="p-10">
-                    <div className="flex justify-between">
-                      <div className="font-medium text-xl">{modalPizza.name}</div>
-                      <div className="text-blue-600">
+                    <div className="flex justify-between font-medium text-xl">
+                      <div>{modalPizza.name}</div>
+                      <div>
                         {modalPizza.price_eur}€ / {modalPizza.price_dollar}$
                       </div>
                     </div>
-                    <div className="text-sm font-light italic mt-1">{modalPizza.description}</div>
+                    <div className="text-sm font-light italic mt-4">{modalPizza.description}</div>
                     <div>
                       <div className="mt-4 mb-2">Size</div>
                       <div className="grid grid-cols-2 gap-5">
