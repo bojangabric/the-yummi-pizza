@@ -118,7 +118,7 @@ class CheckoutForm extends Component {
 
         <button
           onClick={this.confirmOrder}
-          className="w-full bg-yellow-400 text-yellow-800 mt-6 flex justify-center px-6 py-2 rounded"
+          className="w-full bg-yellow-300 text-yellow-800 hover:bg-yellow-400 mt-6 flex justify-center px-6 py-2 rounded"
         >
           Confirm order
         </button>

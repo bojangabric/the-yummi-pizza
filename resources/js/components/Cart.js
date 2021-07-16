@@ -55,7 +55,10 @@ class Cart extends Component {
             </div>
           </div>
         )}
-        <a href="/checkout" className="w-full bg-yellow-400 text-yellow-800 mt-6 flex justify-center px-6 py-2 rounded">
+        <a
+          href="/checkout"
+          className="w-full bg-yellow-300 text-yellow-800 hover:bg-yellow-400 mt-6 flex justify-center px-6 py-2 rounded transition"
+        >
           Check out
         </a>
       </div>

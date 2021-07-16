@@ -53,7 +53,7 @@ const PizzaModal = ({ modalPizza, openModal, closeModal, addToCart }) => {
   return (
     <>
       <Transition appear show={openModal} as={Fragment}>
-        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto" onClose={onClose}>
+        <Dialog as="div" className="fixed inset-0 z-10 overflow-y-auto -mt-24" onClose={onClose}>
           <div className="min-h-screen px-4 text-center">
             <Transition.Child
               as={Fragment}
@@ -118,7 +118,7 @@ const PizzaModal = ({ modalPizza, openModal, closeModal, addToCart }) => {
                     <div className="text-right flex items-center flex-row-reverse mt-6">
                       <button
                         onClick={onAddToCart}
-                        className="ml-4 bg-yellow-400 text-yellow-800 mt-2 h-10 flex items-center px-6 rounded"
+                        className="ml-4 bg-yellow-300 text-yellow-800 hover:bg-yellow-400 transition mt-2 h-10 flex items-center px-6 rounded"
                       >
                         Add to cart
                       </button>
@@ -126,19 +126,19 @@ const PizzaModal = ({ modalPizza, openModal, closeModal, addToCart }) => {
                         <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
                           <button
                             onClick={() => decrementCount()}
-                            className="bg-white shadow text-gray-600 hover:text-black h-full w-20 rounded-l outline-none hover:bg-gray-100 transition"
+                            className="bg-white border text-gray-600 hover:text-black h-full w-20 rounded-l outline-none hover:bg-gray-100 transition"
                           >
                             <MinusSmIcon className="w-5 h-6 text-gray-600 m-auto" />
                           </button>
                           <input
                             disabled
                             type="number"
-                            className="outline-none focus:outline-none border-none text-center w-full bg-white shadow font-semibold text-md flex items-center text-gray-700"
+                            className="outline-none focus:outline-none text-center w-full bg-white border-t border-b border-gray-200 flex items-center text-gray-500"
                             value={count}
                           />
                           <button
                             onClick={() => incrementCount()}
-                            className="bg-white shadow text-gray-600 h-full w-20 hover:text-black rounded-r hover:bg-gray-100 transition"
+                            className="bg-white border text-gray-600 h-full w-20 hover:text-black rounded-r hover:bg-gray-100 transition"
                           >
                             <PlusSmIcon className="w-5 h-6 text-gray-600 m-auto" />
                           </button>

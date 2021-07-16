@@ -14,7 +14,7 @@ class Index extends Component {
 
   render() {
     return (
-      <div className="px-10 xl:px-0 xl:w-9/12 mx-auto">
+      <div className="px-10 xl:px-0  max-w-screen-2xl mx-auto">
         <Header />
 
         <div className="text-cesnter py-12 text-4xl">Choose a pizza you'd like to order!</div>
