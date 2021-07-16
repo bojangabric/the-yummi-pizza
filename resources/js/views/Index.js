@@ -20,7 +20,7 @@ class Index extends Component {
         <div className="text-cesnter py-12 text-4xl">Choose a pizza you'd like to order!</div>
 
         <div className="flex">
-          <div className="w-3/4 grid grid-cols-3 gap-10 self-start">
+          <div className="w-3/4 grid grid-cols-3 gap-20 gap-y-10 self-start">
             {this.props.pizzas.map(pizza => (
               <Pizza
                 name={pizza.name}
