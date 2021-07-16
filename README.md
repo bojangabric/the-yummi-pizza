@@ -73,7 +73,7 @@ php artisan key:generate
 ```
 
 4. This project is using Laravel with docker. Use `sail` script from composer to
-   create docker container
+   create a docker container
 
 ```bash
 ./vendor/bin/sail up -d
@@ -85,10 +85,10 @@ php artisan key:generate
 ./vendor/bin/sail artisan migrate:refresh --seed
 ```
 
-6. Finally, run your script and start your React app in the container
+6. Finally, run your script and start your React app
 
 ```bash
-./vendor/bin/sail npm run watch
+npm run watch
 ```
 
 7. Your site is now running at http://localhost:3000!
