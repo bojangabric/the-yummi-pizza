@@ -91,6 +91,8 @@ php artisan key:generate
 ./vendor/bin/sail npm run watch
 ```
 
+7. Your site is now running at http://localhost:3000!
+
 ## License
 
 The project is open-sourced software licensed under the [MIT](./LICENSE) license.
